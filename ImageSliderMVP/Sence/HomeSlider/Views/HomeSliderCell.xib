@@ -19,24 +19,17 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jfe-9b-1Zi">
                         <rect key="frame" x="0.0" y="0.0" width="198" height="155"/>
                     </imageView>
-                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="orv-t7-ZWL">
-                        <rect key="frame" x="80.5" y="59" width="37" height="37"/>
-                        <color key="color" cocoaTouchSystemColor="darkTextColor"/>
-                    </activityIndicatorView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Jfe-9b-1Zi" firstAttribute="leading" secondItem="CYK-f5-x44" secondAttribute="leading" id="6sB-cH-VHx"/>
-                    <constraint firstItem="orv-t7-ZWL" firstAttribute="centerY" secondItem="CYK-f5-x44" secondAttribute="centerY" id="NCu-Yf-Kc4"/>
                     <constraint firstAttribute="trailing" secondItem="Jfe-9b-1Zi" secondAttribute="trailing" id="QRp-Ro-yXR"/>
                     <constraint firstItem="Jfe-9b-1Zi" firstAttribute="top" secondItem="CYK-f5-x44" secondAttribute="top" id="SZc-9k-r3j"/>
                     <constraint firstAttribute="bottom" secondItem="Jfe-9b-1Zi" secondAttribute="bottom" id="UPl-PO-akn"/>
-                    <constraint firstItem="orv-t7-ZWL" firstAttribute="centerX" secondItem="CYK-f5-x44" secondAttribute="centerX" id="VA9-n2-TFI"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="198" height="155"/>
             <connections>
                 <outlet property="imageSlider" destination="Jfe-9b-1Zi" id="qAs-lO-FMk"/>
-                <outlet property="indecator" destination="orv-t7-ZWL" id="40B-1H-xgW"/>
             </connections>
             <point key="canvasLocation" x="273.91304347826087" y="157.03125"/>
         </collectionViewCell>

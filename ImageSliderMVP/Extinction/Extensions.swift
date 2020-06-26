@@ -123,23 +123,21 @@ extension UIView {
 
 extension UIImageView {
     
-    func addImage(withImage image: String?, andPlaceHolder holder: String,indecator:UIActivityIndicatorView) {
-        indecator.startAnimating()
+      func addImage(withImage image: String?, andPlaceHolder holder: String) {
         let placeHolder = UIImage(named: holder)
         if let imageURL = URL(string: image ?? "") {
+        
+            self.sd_imageIndicator = SDWebImageActivityIndicator.grayLarge
             self.sd_setImage(with: imageURL, placeholderImage: placeHolder, options: [], completed: { (_, error,_ , _) in
                 if error != nil {
                     self.image = placeHolder
-                    indecator.stopAnimating()
                 }
             })
         }else {
             self.image = placeHolder
-             indecator.stopAnimating()
         }
-        indecator.stopAnimating()
-        indecator.hidesWhenStopped = true
     }
+
 }
 
 extension NSDate {

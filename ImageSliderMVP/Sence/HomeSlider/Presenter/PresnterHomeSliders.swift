@@ -27,6 +27,9 @@ class PresnterHomeSliders{
         self.view = view
         
     }
+    init() {
+        
+    }
     
     // here calling API To Bring Images
     func getImages(){

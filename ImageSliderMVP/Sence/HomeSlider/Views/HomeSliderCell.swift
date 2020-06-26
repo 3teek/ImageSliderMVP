@@ -21,7 +21,7 @@ class HomeSliderCell: UICollectionViewCell {
 
 extension HomeSliderCell:HomeSliderImagesCellView{
     func showImage(image: String) {
-        imageSlider.addImage(withImage: image, andPlaceHolder: "noImagePlaceHolder", indecator: indecator)
+        imageSlider.addImage(withImage: image, andPlaceHolder: "noImagePlaceHolder")
     }
     
     

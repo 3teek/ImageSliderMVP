@@ -13,8 +13,12 @@ protocol ImageSliderCellView {
 
 class PresenterImageSlider{
     private var recivedImages = [MainImages]()
+    private let interactor = PresnterHomeSliders()
     init() {}
     
+    func callMore(){
+        interactor.getImages()
+    }
     func reciveImage(imagesArray:[MainImages]){
         self.recivedImages = imagesArray
     }
@@ -24,6 +28,10 @@ class PresenterImageSlider{
     }
     func configureCell(cell:ImageSliderCell,index:Int){
         cell.showImage(image: recivedImages[index].urls?.regular ?? "" )
+       
+        if index == sendCountToCollection() - 1 {
+            callMore()
+        }
     }
    
 }

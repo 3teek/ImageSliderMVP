@@ -54,7 +54,10 @@ extension ImageSliderVC:UICollectionViewDataSource,UICollectionViewDelegate,UICo
        
     }
   
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return self.view
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        scrollView.maximumZoomScale = 5.0
+        scrollView.minimumZoomScale = 1.0
+        scrollView.clipsToBounds = true
+        scrollView.delegate = self
     }
 }
