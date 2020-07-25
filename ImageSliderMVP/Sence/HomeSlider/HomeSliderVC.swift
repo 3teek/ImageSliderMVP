@@ -70,9 +70,10 @@ extension HomeSliderVC: PresenterHomeSliderView{
         
     }
     
-    func moveToImageInfo(images:[MainImages]) {
+    func moveToImageInfo(images:[MainImages],index:Int) {
         guard let sliderVC = storyboard?.instantiateViewController(withIdentifier: "ImageSliderVC") as? ImageSliderVC else {return}
         sliderVC.imagesArray = images
+        sliderVC.selectedIndex = index
         sliderVC.modalPresentationStyle = .fullScreen
         self.present(sliderVC,animated: true)
     }

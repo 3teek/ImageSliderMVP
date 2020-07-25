@@ -16,7 +16,8 @@ protocol PresenterHomeSliderView:class {
     func showErrors(title:String,message:String)
     func showLoading()
     func hideLoading()
-    func moveToImageInfo(images:[MainImages])
+    func moveToImageInfo(images:[MainImages],index:Int)
+    
 }
 class PresnterHomeSliders{
     weak var view:PresenterHomeSliderView?
@@ -66,7 +67,7 @@ class PresnterHomeSliders{
     }
     // here if user Select an image
     func didSelectCell(index:Int){
-//        let id =  images?.resultImage[index].imageID ?? 0
-        view?.moveToImageInfo(images:images!)
+
+        view?.moveToImageInfo(images:images!, index: index)
     }
 }

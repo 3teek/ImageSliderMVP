@@ -11,14 +11,21 @@ import UIKit
 class ImageSliderVC: UIViewController {
     @IBOutlet weak var sliderCollectionView:UICollectionView!
     @IBOutlet weak var closeBtn:UIButton!
+    var selectedIndex = 0
+   
     var presnter:PresenterImageSlider!
     var imagesArray = [MainImages]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presnter = PresenterImageSlider()
+        
         presnter.reciveImage(imagesArray: imagesArray)
-        setupView()
+     
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+           setupView()
     }
     
     
@@ -27,6 +34,8 @@ class ImageSliderVC: UIViewController {
         sliderCollectionView.delegate = self
         sliderCollectionView.dataSource = self
         
+         let indexpath = IndexPath(item: selectedIndex, section: 0)
+        sliderCollectionView.scrollToItem(at: indexpath, at: .init(), animated:true)
         
     }
     @IBAction func closeBtn(_ sender:UIButton){
@@ -47,17 +56,20 @@ extension ImageSliderVC:UICollectionViewDataSource,UICollectionViewDelegate,UICo
             return UICollectionViewCell()
         }
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
        
     }
-  
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        scrollView.maximumZoomScale = 5.0
-        scrollView.minimumZoomScale = 1.0
-        scrollView.clipsToBounds = true
-        scrollView.delegate = self
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+         alertUserWithHandler(title: "save", message: "do you want to save this image") { (action) in
+//                   if let url = URL(string: imagestring),
+//                       let data = try? Data(contentsOf: url),
+//                       let image = UIImage(data: data) {
+//                       UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                   }
+               }
     }
-}
+   
+  
+
